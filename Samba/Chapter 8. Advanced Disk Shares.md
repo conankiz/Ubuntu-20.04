@@ -1,8 +1,9 @@
 ** Hiding and Vetoing Files
 - Hiding file (ẩn file có đuôi .java)
+```bash
 [data]
     hide files = /*.java/*README*/
-
+```
 - Vetoing (Ngăn chặn chép file có đuôi quy định)
 [data]
     veto files = /*.java/*README*/
