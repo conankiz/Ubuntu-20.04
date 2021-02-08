@@ -83,7 +83,8 @@ If width (w) is set instead of height (h), something like /size:50%w, then 50 pe
 <a name="tongket"></a>
 ## III. Summary:
 This post showed you how to install FreeRDP on Ubuntu to allow remote desktop. If you find any error above, please use the comment form below to report.
-Watch Video here: 
+
+**Watch Video here:** 
 
 - [How to connect to Windows remote desktop from ubuntu 20.04 using freerdp](https://youtu.be/o1-4-Vo87vs)
 
