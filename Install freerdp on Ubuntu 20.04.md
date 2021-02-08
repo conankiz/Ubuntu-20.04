@@ -82,7 +82,7 @@ If width (w) is set instead of height (h), something like /size:50%w, then 50 pe
 
 <a name="tongket"></a>
 ## III. Summary:
-
+This post showed you how to install FreeRDP on Ubuntu to allow remote desktop. If you find any error above, please use the comment form below to report.
 Watch Video here: 
 
 - [How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
