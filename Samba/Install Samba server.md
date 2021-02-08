@@ -6,6 +6,10 @@
 [II. Getting Start](#batdau)
 - [1. Step 1](#step1)
 - [2. Step 2](#step2)
+- [2. Step 3](#step3)
+- [2. Step 4](#step4)
+- [2. Step 5](#step5)
+- [2. Step 6](#step6)
 
 [III. Tổng kết](#Tongket)
 
