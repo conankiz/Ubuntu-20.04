@@ -310,8 +310,10 @@ That’s it!
 This post showed you how to install Samba on Ubuntu to allow file sharing. If you find any error above, please use the comment form below to report.
 
 Watch Video here: 
-[How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
-[How to configure and Install Samba on Ubuntu 20.04 Part2: Private Share](https://youtu.be/6s9ZEp3xS94)
+
+- [How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
+- [How to configure and Install Samba on Ubuntu 20.04 Part2: Private Share](https://youtu.be/6s9ZEp3xS94)
+
 Contact me:
 - Email: manhhungbl@gmail.com
 - Skype: spyerx3
