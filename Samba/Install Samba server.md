@@ -7,7 +7,12 @@
 - [1. Step 1](#step1)
 - [2. Step 2](#step2)
 
+[III. Tổng kết](#Tongket)
 
+===========================
+
+<a name="Modau"></a>
+## I. Introduction
 This brief tutorial shows students and new users how to install and configure Samba on Ubuntu 20.04 | 18.04.
 Samba is an open source implementation of SMB/CIFS protocol that allows users to access shared files printers and other network resources.
 Samba enables Linux systems, including Ubuntu to share files with Windows systems, including Windows 10 and other operating systems.
