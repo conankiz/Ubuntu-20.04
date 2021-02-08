@@ -4,13 +4,13 @@
 [I. Introducton](#modau)
 
 [II. Getting Start](#batdau)
-- [1. Step 1](#step1)
-- [2. Step 2](#step2)
-- [3. Step 3](#step3)
-- [4. Step 4](#step4)
-- [5. Step 5](#step5)
-- [6. Step 6](#step6)
-- [7. Step 7](#step7)
+- [1. Step 1: Identify Windows Workgroup](#step1)
+- [2. Step 2: Add Ubuntu to Windows Host File](#step2)
+- [3. Step 3: Enable File Sharing](#step3)
+- [4. Step 4: Install Samba on Ubuntu](#step4)
+- [5. Step 5: Configure Samba Public share](#step5)
+- [6. Step 6: Create the public folder](#step6)
+- [7. Step 7: Configure Samba Private Share](#step7)
 
 [III. Summary](#Tongket)
 
@@ -325,7 +325,7 @@ That’s it!
 ## III. Summary:
 This post showed you how to install Samba on Ubuntu to allow file sharing. If you find any error above, please use the comment form below to report.
 
-Watch Video here: 
+**Watch Video here:** 
 
 - [How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
 - [How to configure and Install Samba on Ubuntu 20.04 Part2: Private Share](https://youtu.be/6s9ZEp3xS94)
