@@ -6,11 +6,7 @@
 [II. Getting Start](#batdau)
 - [1. Step 1: Initial Configuration for Samba4](#step1)
 - [2. Step 2: Install Required Packages for Samba4 AD DC](#step2)
-- [3. Step 3](#step3)
-- [4. Step 4](#step4)
-- [5. Step 5](#step5)
-- [6. Step 6](#step6)
-- [7. Step 7](#step7)
+- [3. Step 3: Provision Samba AD DC for Your Domain](#step3)
 
 [III. Summary](#Tongket)
 
@@ -184,7 +180,7 @@ Run following few queries against Samba Active Directory Domain Controller..
 
 17. Also, verify Kerberos authentication by requesting a ticket for the domain administrator account and list the cached ticket. Write the domain name portion with uppercase.
 
-> $ kinit administrator@TECMINT.LAN
+> $ kinit administrator@HTU.LOCAL
 
 > $ klist
 
