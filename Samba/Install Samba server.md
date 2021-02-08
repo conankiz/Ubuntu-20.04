@@ -6,10 +6,10 @@
 [II. Getting Start](#batdau)
 - [1. Step 1](#step1)
 - [2. Step 2](#step2)
-- [2. Step 3](#step3)
-- [2. Step 4](#step4)
-- [2. Step 5](#step5)
-- [2. Step 6](#step6)
+- [3. Step 3](#step3)
+- [4. Step 4](#step4)
+- [5. Step 5](#step5)
+- [6. Step 6](#step6)
 
 [III. Tổng kết](#Tongket)
 
@@ -30,7 +30,7 @@ Ubuntu IP address ==========================> 192.168.255.201
 Workgroup Name ===========================> WORKGROUP
 
 Both the Windows and Ubuntu machines will be member of the local domain or workgroup called WORKGROUP.
-
+<a name="step1"></a>
 ## Step 1: Identify Windows Workgroup
 To find out which Workgroup Windows machine belongs, open the command prompts and type the commands below
 
@@ -38,7 +38,7 @@ net config workstation
 
 When you run the commands above, you should see your current Workstation domain name for the computer, usually called WORKGROUP.
 
-
+<a name="step2"></a>
 ## Step 2: Add Ubuntu to Windows Host File.
 If you don’t have a DNS system in place and you want to reference each system by their names, you’ll want to add their names in the local host file on each machine..
 
@@ -60,6 +60,7 @@ sudo nano /etc/hosts
 
 Next, type the IP with hostname for Windows machine, save the file and exit.
 
+<a name="step3"></a>
 ## STEP 3: Enable File Sharing
 To make file sharing possible, that feature must be enabled on Windows systems. To enable it, run the commands prompt as administrator and run the commands below
 
@@ -71,6 +72,7 @@ netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 
 File sharing should be enabled on Windows machine after running the commands above.
 
+<a name="step4"></a>
 ## Step 4: Install Samba on Ubuntu
 At this point, Windows and Ubuntu systems should be member of the same workgroup and both systems have entries in their local host file to reference the other by name.
 
@@ -101,7 +103,7 @@ mbd.service - Samba SMB Daemon
      CGroup: /system.slice/smbd.service
              ├─2039 /usr/sbin/smbd --foreground --no-process-group
 ```
-
+<a name="step5"></a>
 ## Step 5: Configure Samba Public share
 Now that Samba is installed, run the commands below to backup its default configuration file.
 ``` sh
@@ -155,6 +157,7 @@ Once done, save your changes. Then run the testparm utility to check the Samba c
 ```
 $ sudo systemctl restart smbd
 ```
+<a name="step6"></a>
 ## Step 6: Create the public folder
 Next, create the public folder where everyone should have access to as defined in Samba configuration above…
 ``` sh
@@ -173,7 +176,7 @@ $ sudo systemctl restart nmbd
 ```
 Now go to your Windows machine and you should see the shared public folder on Ubuntu from when you browse File Manager as shown below.
 Everyone should have access there.
-
+<a name="step7"></a>
 ## Step 7: Configure Samba Private Share
 Now you know how to create Samba public shares, let’s go and create private and protected shares. Only users that are member of the approved group will be able to access the secure location with passwords.
 
