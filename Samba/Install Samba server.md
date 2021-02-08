@@ -71,6 +71,7 @@ To make file sharing possible, that feature must be enabled on Windows systems. 
 Then run the commands below to enable filesharing and network discovery.
 
 > $ sudo netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
+
 > $ sudo netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 
 File sharing should be enabled on Windows machine after running the commands above.
@@ -164,11 +165,14 @@ Next, create the public folder where everyone should have access to as defined i
 
 Set the permissions so that everyone can read and write to it.
 > $ sudo chown -R nobody:nogroup /samba/public
+
 > $ sudo chmod -R 0775 /samba/public
+
 > $ sudo chgrp sambashare /samba/public
 
 Restart Samba and open Windows File Explorer to view the shared location on Ubuntu
 > $ sudo systemctl restart smbd
+
 > $ sudo systemctl restart nmbd
 
 Now go to your Windows machine and you should see the shared public folder on Ubuntu from when you browse File Manager as shown below.
@@ -180,12 +184,14 @@ Now you know how to create Samba public shares, let’s go and create private an
 First create a samba group called smbgroup for the share.. only members will have access. To create a groups in Ubuntu, run the commands below.
 
 - Create group:
+
 > $ sudo groupadd AdminTeam
 > $ sudo groupadd TechTeam
 > $ sudo groupadd SaleTeam
 > $ cat /etc/group
 
 - Add user:
+
 > $ sudo useradd -s /usr/sbin/nologin admin1
 > $ sudo useradd -s /usr/sbin/nologin tech1
 > $ sudo useradd -s /usr/sbin/nologin tech2
@@ -193,6 +199,7 @@ First create a samba group called smbgroup for the share.. only members will hav
 > $ sudo useradd -s /usr/sbin/nologin saler2
 
 - Add user to Group:
+
 > $ sudo usermod -aG AdminTeam,TechTeam,SaleTeam admin1
 > $ sudo usermod -aG TechTeam tech1
 > $ sudo usermod -aG TechTeam tech2
@@ -201,6 +208,7 @@ First create a samba group called smbgroup for the share.. only members will hav
 
 - Finally, all users who need to access a protected samba share will need to type a password. To add a user to samba password database, run the commands below for each user:
 The user will be prompted to enter and confirm a password. This password will be used to access the protected samba shares.
+
 > $ sudo smbpasswd -a admin01
 > $ sudo smbpasswd -e admin01
 
@@ -211,15 +219,18 @@ The user will be prompted to enter and confirm a password. This password will be
 > $ sudo smbpasswd -e saler02
 
 - Show user and group:
+
 > $ sudo cat /etc/password
 > $ sudo cat /et/group
 
 - Next, go and create Admin, Techical, Sale folder share in the /data directory.
+
 > $ sudo mkdir -p /data/Admin
 > $ sudo mkdir -p /data/Tecnical
 > $ sudo mkdir -p /data/Sale
 
 - Then give only root and members group access to this share.
+
 > $ sudo cd /data/
 > $ sudo chown -R root:AdminTeam Admin
 > $ sudo chmod -R 2770 Admin
@@ -231,6 +242,7 @@ The user will be prompted to enter and confirm a password. This password will be
 > $ sudo chmod -R 2770 Sale
 
 - When you’re done creating the folder share, go and share it in the smb.conf file.
+
 > $ sudo nano /etc/samba/smb.conf
 
 Then add configuration block below into smb.conf file just below the one above
