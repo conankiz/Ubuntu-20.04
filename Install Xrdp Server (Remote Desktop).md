@@ -7,10 +7,7 @@
 - [1. Step 1: Installing Xrdp](#step1)
 - [2. Step 2: Xrdp Configuration](#step2)
 - [3. Step 3: Configuring Firewall ](#step3)
-- [4. Step 4](#step4)
-- [5. Step 5](#step5)
-- [6. Step 6](#step6)
-- [7. Step 7](#step7)
+- [4. Step 4: Connecting to the Xrdp Server](#step4)
 
 [III. Summary](#Tongket)
 
