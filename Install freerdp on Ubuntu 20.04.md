@@ -6,8 +6,8 @@
 [II. Getting Start](#batdau)
 - [1. Step 1: Install FreeRDP](#step1)
 - [2. Step 2: How to connect with freerdp command](#step2)
-- [3. Step 3](#step3)
-- [4. Step 4](#step4)
+- [3. Step 3: How to create shared folders in freerdp](#step3)
+- [4. Step 4: How to bring remote desktop to another monitor](#step4)
 
 
 [III. Summary](#Tongket)
