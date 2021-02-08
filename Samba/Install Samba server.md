@@ -10,8 +10,9 @@
 - [4. Step 4](#step4)
 - [5. Step 5](#step5)
 - [6. Step 6](#step6)
+- [7. Step 7](#step7)
 
-[III. Tổng kết](#Tongket)
+[III. Summary](#Tongket)
 
 ===========================
 
@@ -302,8 +303,7 @@ You could map the drive in Windows for easy access….
 
 That’s it!
 
-Conclusion:
-
+### Summary:
 This post showed you how to install Samba on Ubuntu to allow file sharing. If you find any error above, please use the comment form below to report.
 
 Thanks,
