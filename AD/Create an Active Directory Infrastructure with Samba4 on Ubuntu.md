@@ -1,16 +1,36 @@
-=====================================================================
-== Create an Active Directory Infrastructure with Samba4 on Ubuntu ==
-=====================================================================
-Step 1: Initial Configuration for Samba4
+## Create an Active Directory Infrastructure with Samba4 on Ubuntu
+### Table of contents
 
+[I. Introducton](#modau)
+
+[II. Getting Start](#batdau)
+- [1. Step 1: Initial Configuration for Samba4](#step1)
+- [2. Step 2](#step2)
+- [3. Step 3](#step3)
+- [4. Step 4](#step4)
+- [5. Step 5](#step5)
+- [6. Step 6](#step6)
+- [7. Step 7](#step7)
+
+[III. Summary](#Tongket)
+
+===========================
+
+<a name="Modau"></a>
+## I. Introduction
+
+<a name="batdau"></a>
+## II. Getting Start:
+
+<a name="step1"></a>
+## Step 1: Initial Configuration for Samba4
 
 1. Open machine /etc/fstab file and assure that your partitions file system has ACLs enabled as illustrated 
 Usually, common modern Linux file systems such as ext3, ext4, xfs or btrfs support and have ACLs enabled by default. If that’s not the case with your file system just open /etc/fstab file for editing and add acl string at the end of third column and reboot the machine in order to apply changes.
 
 2. Assign a static IP to your server. Ubuntu Server uses netplan for network management. Your network configuration will look similar to this:
 $ sudo vim /etc/netplan/00-installer
-
----
+``` sh
 network:
   ethernets:
     enp0s3:
@@ -22,32 +42,57 @@ network:
         addresses: [8.8.8.8, 8.8.4.4]
         search: []
   version: 2
----
+```
 - Apply the network config
-$ sudo netplan apply
+
+> $ sudo netplan apply
 
 - Check if time synchronization with an Internet server is working
-$ timedatectl
-$ sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+
+> $ timedatectl
+
+> $ sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 
 - Update the apt cache
-$ sudo apt update
-
+>$ sudo apt update
 
 3. Setup your machine hostname with a descriptive name, such as adc1 used in this example, by editing /etc/hostname file or by issuing.
-$ sudo vi /etc/hostname
----
+
+> $ sudo vi /etc/hostname
+
+``` sh
 dc1.htu.local
----
-sudo vi /etc/hosts
----
+```
+
+> $ sudo vi /etc/hosts
+
+``` sh
 192.168.30.241 dc1.htu.local dc1
----
-sudo reboot
+```
+
+> $ sudo reboot
 
 A reboot is necessary after you’ve changed your machine name in order to apply changes.
 
 ======
+<a name="step2"></a>
+## Step 2:
+
+<a name="tongket"></a>
+## III. Summary:
+
+Watch Video here: 
+
+- [How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
+- [How to configure and Install Samba on Ubuntu 20.04 Part2: Private Share](https://youtu.be/6s9ZEp3xS94)
+
+Contact me:
+- Email: manhhungbl@gmail.com
+- Skype: spyerx3
+- Youtube Channel: youtube.com/howtoused
+
+Thank you very much!
+
 Step 2: Install Required Packages for Samba4 AD DC
 
 4. In order to transform your server into an Active Directory Domain Controller, install Samba and all the required packages on your machine by issuing the below command with root privileges in a console.
