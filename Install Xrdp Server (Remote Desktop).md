@@ -69,7 +69,8 @@ This post showed you how to install Xrdp on Ubuntu to allow remote desktop. If y
 
 - [How to Install Xrdp Server Remote Desktop on Ubuntu 20.04:](https://youtu.be/UFW6Tw34yoc)
 
-Contact me:
+*Contact me:
+
 - Email: manhhungbl@gmail.com
 - Skype: spyerx3
 - Youtube Channel: youtube.com/howtoused
