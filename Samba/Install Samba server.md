@@ -31,6 +31,9 @@ Ubuntu IP address ==========================> 192.168.255.201
 Workgroup Name ===========================> WORKGROUP
 
 Both the Windows and Ubuntu machines will be member of the local domain or workgroup called WORKGROUP.
+<a name="batdau"></a>
+## II. Getting Start:
+
 <a name="step1"></a>
 ## Step 1: Identify Windows Workgroup
 To find out which Workgroup Windows machine belongs, open the command prompts and type the commands below
@@ -302,7 +305,7 @@ Only member of the smbgroup will be able to access the Protected area…
 You could map the drive in Windows for easy access….
 
 That’s it!
-
+<a name="tongket"></a>
 ### Summary:
 This post showed you how to install Samba on Ubuntu to allow file sharing. If you find any error above, please use the comment form below to report.
 
