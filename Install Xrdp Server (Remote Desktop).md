@@ -64,6 +64,7 @@ Xrdp is an open-source implementation of the Microsoft Remote Desktop Protocol (
 <a name="tongket"></a>
 ## III. Summary:
 This post showed you how to install Xrdp on Ubuntu to allow remote desktop. If you find any error above, please use the comment form below to report.
+
 **Watch Video here:** 
 
 - [How to Install Xrdp Server Remote Desktop on Ubuntu 20.04:](https://youtu.be/UFW6Tw34yoc)
