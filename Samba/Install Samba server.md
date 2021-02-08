@@ -47,9 +47,10 @@ Next, type the IP with hostname for Windows machine, save the file and exit.
 To make file sharing possible, that feature must be enabled on Windows systems. To enable it, run the commands prompt as administrator and run the commands below
 
 Then run the commands below to enable filesharing and network discovery.
-
+``` sh
 netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
 netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
+```
 
 File sharing should be enabled on Windows machine after running the commands above.
 
@@ -57,16 +58,18 @@ File sharing should be enabled on Windows machine after running the commands abo
 At this point, Windows and Ubuntu systems should be member of the same workgroup and both systems have entries in their local host file to reference the other by name.
 
 Next, logon on to the Ubuntu machine to install Samba. To install Samba, run the commands below.
-
+``` sh
 $ sudo apt update
 $ sudo apt install samba
+```
 After installing Samba, go and config Samba.
 
 To verify if Samba services are running, run the commands below:
-
+``` sh
 $ sudo systemctl status smbd
+```
 It should output similar lines as below:
-
+``` sh
 mbd.service - Samba SMB Daemon
      Loaded: loaded (/lib/systemd/system/smbd.service; enabled; vendor preset: >
      Active: active (running) since Wed 2020-05-06 18:23:55 CDT; 4min 27s ago
@@ -80,14 +83,17 @@ mbd.service - Samba SMB Daemon
      Memory: 14.9M
      CGroup: /system.slice/smbd.service
              ├─2039 /usr/sbin/smbd --foreground --no-process-group
+```
+
 ## Step 5: Configure Samba Public share
 Now that Samba is installed, run the commands below to backup its default configuration file.
-
+``` sh
 $ sudo cp /etc/samba/smb.conf{,.backup}
+```
 Next, open Samba configuration file by running the commands below.
-
+``` sh
 $ sudo nano /etc/samba/smb.conf
-
+```
 Then make sure you setup the highlighted lines to match the ones below.
 ``` sh
 ======================= Global Settings =======================
@@ -134,19 +140,20 @@ $ sudo systemctl restart smbd
 ```
 ## Step 6: Create the public folder
 Next, create the public folder where everyone should have access to as defined in Samba configuration above…
-
+``` sh
 sudo mkdir -p /samba/public
-
+```
 Set the permissions so that everyone can read and write to it.
-
+``` sh
 sudo chown -R nobody:nogroup /samba/public
 sudo chmod -R 0775 /samba/public
 sudo chgrp sambashare /samba/public
+```
 Restart Samba and open Windows File Explorer to view the shared location on Ubuntu
-
+``` sh
 $ sudo systemctl restart smbd
 $ sudo systemctl restart nmbd
-
+```
 Now go to your Windows machine and you should see the shared public folder on Ubuntu from when you browse File Manager as shown below.
 Everyone should have access there.
 
@@ -156,27 +163,31 @@ Now you know how to create Samba public shares, let’s go and create private an
 First create a samba group called smbgroup for the share.. only members will have access. To create a groups in Ubuntu, run the commands below.
 
 - Create group:
+``` sh
 $ sudo groupadd AdminTeam
 $ sudo groupadd TechTeam
 $ sudo groupadd SaleTeam
 $ cat /etc/group
-
+```
 - Add user:
+``` sh
 $ sudo useradd -s /usr/sbin/nologin admin1
 $ sudo useradd -s /usr/sbin/nologin tech1
 $ sudo useradd -s /usr/sbin/nologin tech2
 $ sudo useradd -s /usr/sbin/nologin saler1
 $ sudo useradd -s /usr/sbin/nologin saler2
-
+``` 
 - Add user to Group:
+``` sh
 $ sudo usermod -aG AdminTeam,TechTeam,SaleTeam admin1
 $ sudo usermod -aG TechTeam tech1
 $ sudo usermod -aG TechTeam tech2
 $ sudo usermod -aG SaleTeam saler1
 $ sudo usermod -aG SaleTeam saler2
-
+```
 - Finally, all users who need to access a protected samba share will need to type a password. To add a user to samba password database, run the commands below for each user:
 The user will be prompted to enter and confirm a password. This password will be used to access the protected samba shares.
+``` sh
 $ sudo smbpasswd -a admin01
 $ sudo smbpasswd -e admin01
 
@@ -185,20 +196,21 @@ $ sudo smbpasswd -e tech01
 
 $ sudo smbpasswd -a saler01
 $ sudo smbpasswd -e saler02
-
+```
 - Show user and group:
+``` sh
 $ sudo cat /etc/password
 $ sudo cat /et/group
-
+```
 
 - Next, go and create Admin, Techical, Sale folder share in the /data directory.
-
+``` sh
 $ sudo mkdir -p /data/Admin
 $ sudo mkdir -p /data/Tecnical
 $ sudo mkdir -p /data/Sale
-
+```
 - Then give only root and members group access to this share.
-
+``` sh
 $ sudo cd /data/
 $ sudo chown -R root:AdminTeam Admin
 $ sudo chmod -R 2770 Admin
@@ -208,10 +220,11 @@ $ sudo chmod -R 2770 Tecnical
 
 $ sudo chown -R root:saleTeam Sale
 $ sudo chmod -R 2770 Sale
-
+```
 - When you’re done creating the folder share, go and share it in the smb.conf file.
+``` sh
 # sudo nano /etc/samba/smb.conf
-
+```
 Then add configuration block below into smb.conf file just below the one above
 ``` sh
 [Admin]
