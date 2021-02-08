@@ -1,4 +1,4 @@
-=== Install Samba on Ubuntu 20.04 
+# Install Samba on Ubuntu 20.04 
 
 This brief tutorial shows students and new users how to install and configure Samba on Ubuntu 20.04 | 18.04.
 Samba is an open source implementation of SMB/CIFS protocol that allows users to access shared files printers and other network resources.
@@ -14,7 +14,7 @@ Workgroup Name ===========================> WORKGROUP
 
 Both the Windows and Ubuntu machines will be member of the local domain or workgroup called WORKGROUP.
 
-Step 1: Identify Windows Workgroup
+## Step 1: Identify Windows Workgroup
 To find out which Workgroup Windows machine belongs, open the command prompts and type the commands below
 
 net config workstation
@@ -22,7 +22,7 @@ net config workstation
 When you run the commands above, you should see your current Workstation domain name for the computer, usually called WORKGROUP.
 
 
-Step 2: Add Ubuntu to Windows Host File.
+## Step 2: Add Ubuntu to Windows Host File.
 If you don’t have a DNS system in place and you want to reference each system by their names, you’ll want to add their names in the local host file on each machine..
 
 For Windows system, open the commands prompt as administrator and run the commands below.
@@ -43,7 +43,7 @@ sudo nano /etc/hosts
 
 Next, type the IP with hostname for Windows machine, save the file and exit.
 
-STEP 3: Enable File Sharing
+## STEP 3: Enable File Sharing
 To make file sharing possible, that feature must be enabled on Windows systems. To enable it, run the commands prompt as administrator and run the commands below
 
 Then run the commands below to enable filesharing and network discovery.
@@ -53,7 +53,7 @@ netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 
 File sharing should be enabled on Windows machine after running the commands above.
 
-Step 4: Install Samba on Ubuntu
+## Step 4: Install Samba on Ubuntu
 At this point, Windows and Ubuntu systems should be member of the same workgroup and both systems have entries in their local host file to reference the other by name.
 
 Next, logon on to the Ubuntu machine to install Samba. To install Samba, run the commands below.
@@ -80,7 +80,7 @@ mbd.service - Samba SMB Daemon
      Memory: 14.9M
      CGroup: /system.slice/smbd.service
              ├─2039 /usr/sbin/smbd --foreground --no-process-group
-Step 5: Configure Samba Public share
+## Step 5: Configure Samba Public share
 Now that Samba is installed, run the commands below to backup its default configuration file.
 
 $ sudo cp /etc/samba/smb.conf{,.backup}
@@ -89,7 +89,7 @@ Next, open Samba configuration file by running the commands below.
 $ sudo nano /etc/samba/smb.conf
 
 Then make sure you setup the highlighted lines to match the ones below.
-
+``` sh
 ======================= Global Settings =======================
 [global]
 ## Browsing/Identification ###
@@ -125,12 +125,14 @@ obey pam restrictions = yes
    force user = nobody
    force create mode = 0777
    force directory mode = 0777
+```
 Once done, save your changes. Then run the testparm utility to check the Samba configuration file for errors.
 
 - Restart Samba services.
+```
 $ sudo systemctl restart smbd
-
-Step 6: Create the public folder
+```
+## Step 6: Create the public folder
 Next, create the public folder where everyone should have access to as defined in Samba configuration above…
 
 sudo mkdir -p /samba/public
@@ -148,7 +150,7 @@ $ sudo systemctl restart nmbd
 Now go to your Windows machine and you should see the shared public folder on Ubuntu from when you browse File Manager as shown below.
 Everyone should have access there.
 
-Step 6: Configure Samba Private Share
+## Step 7: Configure Samba Private Share
 Now you know how to create Samba public shares, let’s go and create private and protected shares. Only users that are member of the approved group will be able to access the secure location with passwords.
 
 First create a samba group called smbgroup for the share.. only members will have access. To create a groups in Ubuntu, run the commands below.
@@ -211,7 +213,7 @@ $ sudo chmod -R 2770 Sale
 # sudo nano /etc/samba/smb.conf
 
 Then add configuration block below into smb.conf file just below the one above
-
+``` sh
 [Admin]
     comment = Everyone in the AdminTeam
     path = /data/Admin
@@ -249,13 +251,14 @@ Then add configuration block below into smb.conf file just below the one above
 	valid users = @AccTeam @AdminTeam
 	write list = @AccTeam
 
-
+```
 Save your changes and you’re done.
 
 Restart Samba and test your changes.
+``` sh
 $ sudo systemctl restart smbd
 $ sudo systemctl restart nmbd
-
+```
 You should now see two folders… one is protected
 
 Many more shares can be defined using the format above.
