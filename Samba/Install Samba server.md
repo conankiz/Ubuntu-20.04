@@ -52,7 +52,7 @@ For Windows system, open the commands prompt as administrator and run the comman
 
 Then add the local entry for the Ubuntu machine to be referenced by the named ubuntu16.04
 
-192.168.1.3            ubuntu2004.localhost           ubuntu2004
+> 192.168.1.3            ubuntu2004.localhost           ubuntu2004
 
 Save your changes and you’re done.
 
@@ -60,7 +60,7 @@ To add Windows system name to Ubuntu host file, press Ctrl + Alt + T on your key
 
 Then run the commands below:
 
-> sudo nano /etc/hosts
+> $ sudo nano /etc/hosts
 
 Next, type the IP with hostname for Windows machine, save the file and exit.
 
@@ -70,8 +70,8 @@ To make file sharing possible, that feature must be enabled on Windows systems. 
 
 Then run the commands below to enable filesharing and network discovery.
 
-> netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
-> netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
+> $ sudo netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
+> $ sudo netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 
 File sharing should be enabled on Windows machine after running the commands above.
 
@@ -163,9 +163,9 @@ Next, create the public folder where everyone should have access to as defined i
 > sudo mkdir -p /samba/public
 
 Set the permissions so that everyone can read and write to it.
-> sudo chown -R nobody:nogroup /samba/public
-> sudo chmod -R 0775 /samba/public
-> sudo chgrp sambashare /samba/public
+> $ sudo chown -R nobody:nogroup /samba/public
+> $ sudo chmod -R 0775 /samba/public
+> $ sudo chgrp sambashare /samba/public
 
 Restart Samba and open Windows File Explorer to view the shared location on Ubuntu
 > $ sudo systemctl restart smbd
