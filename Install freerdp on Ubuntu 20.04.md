@@ -4,13 +4,11 @@
 [I. Introducton](#modau)
 
 [II. Getting Start](#batdau)
-- [1. Step 1](#step1)
-- [2. Step 2](#step2)
+- [1. Step 1: Install FreeRDP](#step1)
+- [2. Step 2: How to connect with freerdp command](#step2)
 - [3. Step 3](#step3)
 - [4. Step 4](#step4)
-- [5. Step 5](#step5)
-- [6. Step 6](#step6)
-- [7. Step 7](#step7)
+
 
 [III. Summary](#Tongket)
 
@@ -31,7 +29,11 @@ FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
 > $ sudo apt install freerdp2-x11
 
 <a name="step2"></a>
-## Step 2:
+## Step 2: How to connect with freerdp command
+- To connect to the remote desktop using xfreerdp, run a command of the form:
+
+``` $ xfreerdp /f /u:USERNAME /p:PASSWORD /v:HOST[:PORT] ```
+> $ xfreerdp /multimon /u:setup@tic.local /v:192.168.11.98
 
 <a name="tongket"></a>
 ## III. Summary:
