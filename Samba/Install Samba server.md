@@ -1,6 +1,4 @@
-=======================================
-==== Install Samba on Ubuntu 20.04 ====
-=======================================
+=== Install Samba on Ubuntu 20.04 
 
 This brief tutorial shows students and new users how to install and configure Samba on Ubuntu 20.04 | 18.04.
 Samba is an open source implementation of SMB/CIFS protocol that allows users to access shared files printers and other network resources.
