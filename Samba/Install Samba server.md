@@ -186,59 +186,80 @@ First create a samba group called smbgroup for the share.. only members will hav
 - Create group:
 
 > $ sudo groupadd AdminTeam
+
 > $ sudo groupadd TechTeam
+
 > $ sudo groupadd SaleTeam
+
 > $ cat /etc/group
 
 - Add user:
 
 > $ sudo useradd -s /usr/sbin/nologin admin1
+
 > $ sudo useradd -s /usr/sbin/nologin tech1
+
 > $ sudo useradd -s /usr/sbin/nologin tech2
+
 > $ sudo useradd -s /usr/sbin/nologin saler1
+
 > $ sudo useradd -s /usr/sbin/nologin saler2
 
 - Add user to Group:
 
 > $ sudo usermod -aG AdminTeam,TechTeam,SaleTeam admin1
+
 > $ sudo usermod -aG TechTeam tech1
+
 > $ sudo usermod -aG TechTeam tech2
+
 > $ sudo usermod -aG SaleTeam saler1
+
 > $ sudo usermod -aG SaleTeam saler2
 
 - Finally, all users who need to access a protected samba share will need to type a password. To add a user to samba password database, run the commands below for each user:
 The user will be prompted to enter and confirm a password. This password will be used to access the protected samba shares.
 
 > $ sudo smbpasswd -a admin01
+
 > $ sudo smbpasswd -e admin01
 
 > $ sudo smbpasswd -a tech01
+
 > $ sudo smbpasswd -e tech01
 
 > $ sudo smbpasswd -a saler01
+
 > $ sudo smbpasswd -e saler02
 
 - Show user and group:
 
 > $ sudo cat /etc/password
+
 > $ sudo cat /et/group
 
 - Next, go and create Admin, Techical, Sale folder share in the /data directory.
 
 > $ sudo mkdir -p /data/Admin
+
 > $ sudo mkdir -p /data/Tecnical
+
 > $ sudo mkdir -p /data/Sale
 
 - Then give only root and members group access to this share.
 
 > $ sudo cd /data/
+
 > $ sudo chown -R root:AdminTeam Admin
+
 > $ sudo chmod -R 2770 Admin
 
 > $ sudo chown -R root:TechTeam Tecnical
+
 > $ sudo chmod -R 2770 Tecnical
 
 > $ sudo chown -R root:saleTeam Sale
+
 > $ sudo chmod -R 2770 Sale
 
 - When you’re done creating the folder share, go and share it in the smb.conf file.
