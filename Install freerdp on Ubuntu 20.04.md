@@ -46,7 +46,8 @@ Start button → Shutdown → Disconnect
 
 > $ xfreerdp /u:Tester /p:1234 /v:192.168.0.101
 
-- How to create shared folders in freerdp
+<a name="step3"></a>
+## Step 3: How to create shared folders in freerdp
 With remote desktop connected via RDP, you can have shared folders. Let's look at a few examples.
 
 To connect all mount points in the current system as shared folders on the remote desktop, use the +drives option, for example:
@@ -64,7 +65,8 @@ With the option /drive:NAME,/PATH/IN/LINUX, you can connect any folder with any 
 
 > $ xfreerdp /u:Tester /p:1234 /v:192.168.0.101 /drive:root,/
 
-- How to bring remote desktop to another monitor
+<a name="step4"></a>
+## Step 4: How to bring remote desktop to another monitor
 If you have several monitors, then you can choose which one to use for the remote system. To list the monitors, run the command:
 
 > $ xfreerdp monitor-list
