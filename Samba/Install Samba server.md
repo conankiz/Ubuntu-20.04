@@ -48,7 +48,7 @@ If you don’t have a DNS system in place and you want to reference each system 
 
 For Windows system, open the commands prompt as administrator and run the commands below.
 
-notepad C:\\Windows\System32\drivers\etc\hosts
+> notepad C:\\Windows\System32\drivers\etc\hosts
 
 Then add the local entry for the Ubuntu machine to be referenced by the named ubuntu16.04
 
@@ -60,7 +60,7 @@ To add Windows system name to Ubuntu host file, press Ctrl + Alt + T on your key
 
 Then run the commands below:
 
-sudo nano /etc/hosts
+> sudo nano /etc/hosts
 
 Next, type the IP with hostname for Windows machine, save the file and exit.
 
@@ -69,10 +69,9 @@ Next, type the IP with hostname for Windows machine, save the file and exit.
 To make file sharing possible, that feature must be enabled on Windows systems. To enable it, run the commands prompt as administrator and run the commands below
 
 Then run the commands below to enable filesharing and network discovery.
-``` sh
-netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
-netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
-```
+
+> netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
+> netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 
 File sharing should be enabled on Windows machine after running the commands above.
 
@@ -81,10 +80,10 @@ File sharing should be enabled on Windows machine after running the commands abo
 At this point, Windows and Ubuntu systems should be member of the same workgroup and both systems have entries in their local host file to reference the other by name.
 
 Next, logon on to the Ubuntu machine to install Samba. To install Samba, run the commands below.
-``` sh
-$ sudo apt update
-$ sudo apt install samba
-```
+
+> $ sudo apt update
+> $ sudo apt install samba
+
 After installing Samba, go and config Samba.
 
 To verify if Samba services are running, run the commands below:
