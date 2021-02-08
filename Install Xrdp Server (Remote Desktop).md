@@ -4,9 +4,9 @@
 [I. Introducton](#modau)
 
 [II. Getting Start](#batdau)
-- [1. Step 1](#step1)
-- [2. Step 2](#step2)
-- [3. Step 3](#step3)
+- [1. Step 1: Installing Xrdp](#step1)
+- [2. Step 2: Xrdp Configuration](#step2)
+- [3. Step 3: Configuring Firewall ](#step3)
 - [4. Step 4](#step4)
 - [5. Step 5](#step5)
 - [6. Step 6](#step6)
@@ -23,10 +23,24 @@ Xrdp is an open-source implementation of the Microsoft Remote Desktop Protocol (
 ## II. Getting Start:
 
 <a name="step1"></a>
-## Step 1:
+## Step 1: Installing Xrdp
+- Xrdp is incuded in the default Ubuntu repositories. To install it, run:
+> $ sudo apt install xrdp 
+
+- By default Xrdp uses the /etc/ssl/private/ssl-cert-snakeoil.key file that is readable only by members of the “ssl-cert” group. Run the following command to add the xrdp user to the group :
+> $ sudo adduser xrdp ssl-cert
+
+- Restart the Xrdp service for changes to take effect:
+> $ sudo systemctl restart xrdp
+
+- Once the installation is complete, the Xrdp service will automatically start. You can verify it by typing:
+> $ sudo systemctl status xrdp
 
 <a name="step2"></a>
-## Step 2:
+## Step 2: Xrdp Configuration
+
+<a name="step3"></a>
+## Step 3: Configuring Firewall 
 
 <a name="tongket"></a>
 ## III. Summary:
