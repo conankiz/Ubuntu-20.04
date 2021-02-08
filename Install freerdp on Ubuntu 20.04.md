@@ -23,7 +23,12 @@ FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released 
 ## II. Getting Start:
 
 <a name="step1"></a>
-## Step 1:
+## Step 1: Install FreeRDP
+- Update system
+> $ sudo apt update
+
+- Install 
+> $ sudo apt install freerdp2-x11
 
 <a name="step2"></a>
 ## Step 2:
