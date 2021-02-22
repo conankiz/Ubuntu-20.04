@@ -28,6 +28,7 @@
 ```
 $ sudo vi /etc/hostname
 ```
+<img src="https://i.imgur.com/ht8PsTt.png">
 <a name="step2"></a>
 ## Step 2:
 
