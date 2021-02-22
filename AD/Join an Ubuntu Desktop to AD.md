@@ -4,7 +4,7 @@
 [I. Introducton](#modau)
 
 [II. Getting Start](#batdau)
-- [1. Step 1](#step1)
+- [1. Step 1: set hostname](#step1)
 - [2. Step 2](#step2)
 - [3. Step 3](#step3)
 - [4. Step 4](#step4)
@@ -23,8 +23,11 @@
 ## II. Getting Start:
 
 <a name="step1"></a>
-## Step 1:
-
+## Step 1: Set hostname
+ An important aspect of your machine represents the hostname. Setup a proper machine name before joining the domain with the help of hostnamectl command or by manually editing /etc/hostname file.
+```
+$ sudo vi /etc/hostname
+```
 <a name="step2"></a>
 ## Step 2:
 
