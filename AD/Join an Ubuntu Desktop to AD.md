@@ -5,7 +5,7 @@
 
 [II. Getting Start](#batdau)
 - [1. Step 1: set hostname](#step1)
-- [2. Step 2](#step2)
+- [2. Step 2: Confirm DNS ia configured correctly](#step2)
 - [3. Step 3](#step3)
 - [4. Step 4](#step4)
 - [5. Step 5](#step5)
@@ -30,7 +30,10 @@ $ sudo vi /etc/hostname
 ```
 <img src="https://i.imgur.com/ht8PsTt.png">
 <a name="step2"></a>
-## Step 2:
+## Step 2: Confirm DNS ia configured correctly
+```
+$ sudo vi /etc/resolv.conf
+```
 
 <a name="tongket"></a>
 ## III. Summary:
