@@ -5,13 +5,17 @@
 
 [II. Getting Start](#batdau)
 - [1. Step 1: set hostname](#step1)
-- [2. Step 2: Confirm DNS ia configured correctly](#step2)
-- [3. Step 3](#step3)
-- [4. Step 4](#step4)
-- [5. Step 5](#step5)
-- [6. Step 6](#step6)
-- [7. Step 7](#step7)
-
+- [2. Step 2: Update system and install fping](#step2)
+- [3. Step 3: Check your Ubuntu Desktop machine](#step3)
+- [4. Step 4: Ping Active Directory](#step4)
+- [5. Step 5: Install all necessary packages](#step5)
+- [6. Step 6: Config your NTP](#step6)
+- [7. Step 7: Setting up realmd](#step7)
+- [8. Step 8: Join the Ubuntu](#step8)
+- [9. Step 9: Add the Ubuntu machine in the domain](#step9)
+- [10. Step 10: Config sssd](#step10)
+- [11. Step 11: Config homedir auto-creation for new users](#step11)
+- [12. Step 12: Check Active Directory users name resolution](#step12)
 [III. Summary](#Tongket)
 
 ===========================
