@@ -49,26 +49,103 @@ _ldap._tcp.htu.local. 900 IN SRV 0 100 389 dc1.htu.local.
 <a name="step4"></a>
 ## Step 4: Ping Active Directory domain Domain Controllers:
 ```
-$ ping test.lab
-$ ping pdc.test.lab
+$ ping htu.local
+$ ping dc1.htu.local
 ```
 also
 ```
-$ fping pdc.test.lab
-pdc.test.lab is alive
+$ fping dc1.htu.local
+dc1.htu.local is alive
 ```
 <a name="step5"></a>
 ## Step 5: Install all necessary packages:
 ```
 $ sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
 ```
+after ask type local domain :TEST.LAB
+then OK
+
 <img src="https://i.imgur.com/jDHPVft.png">
 <a name="step6"></a>
-## Step 6:
+## Step 6: Config your NTP service to point to your domain nameservers, run the following command :
+```
+$ sudo vi /etc/ntp.conf
+```
+Add a new line:
+
+pdc.test.lab
+
+- Restart your ntp service:
+```
+$ sudo systemctl restart ntp
+```
 <a name="step7"></a>
-## Step 7:
+## Step 7: Setting up realmd:
+```
+$ sudo vi /etc/realmd.conf
+```
+```
+[users]
+default-home = /home/%D/%U
+default-shell = /bin/bash
+[active-directory]
+default-client = sssd
+os-name = Ubuntu Desktop Linux
+os-version = 14.04
+[service]
+automatic-install = no
+[htu.local]
+fully-qualified-names = no
+automatic-id-mapping = yes
+user-principal = yes
+manage-system = no
+```
 <a name="step8"></a>
-## Step 8:
+## Step 8: Join the Ubuntu machine on the AD domain:
+```
+$ sudo kinit administrator@HTU.LOCAL
+```
+<a name="step9"></a>
+## Step 9: Add the Ubuntu machine in the domain:
+```
+$ sudo realm --verbose join htu.local \
+--user-principal=ubuntu02/administrator@HTU.LOCAL --unattended
+```
+<img src="https://i.imgur.com/1u42Byu.png">
+<a name="step10"></a>
+## Step 10:Config sssd:
+```
+$ sudo vi /etc/sssd/sssd.conf
+```
+Modify the: access_provider = simple 
+to
+access_provider = ad
+<img src="https://i.imgur.com/JWh6jrh.png">
+- Restart the sssd service:
+```
+$ sudo service sssd restart
+```
+<a name="step11"></a>
+## Step 11:  Config homedir auto-creation for new users:
+```
+$ sudo vi /etc/pam.d/common-session
+```
+Insert : 
+```
+session required pam_unix.so
+session optional pam_winbind.so
+session optional pam_sss.so
+session optional pam_systemd.so
+session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
+```
+<img src="https://i.imgur.com/Gfc5ZQv.png">
+
+<a name="step12"></a>
+## Step 12: Check Active Directory users name resolution
+```
+$ id domainuser
+```
+<img src="https://i.imgur.com/6nfInqy.png">
 <a name="tongket"></a>
 ## III. Summary:
 
