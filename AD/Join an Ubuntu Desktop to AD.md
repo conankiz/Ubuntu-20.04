@@ -30,11 +30,42 @@ $ sudo vi /etc/hostname
 ```
 <img src="https://i.imgur.com/ht8PsTt.png">
 <a name="step2"></a>
-## Step 2: Confirm DNS ia configured correctly
+## Step 2: Update system and install fping
 ```
-$ sudo vi /etc/resolv.conf
+$ sudo apt update
+$ sudo apt-get install fping
+$ sudo reboot
 ```
-
+<a name="step3"></a>
+## Step 3: - Check your Ubuntu Desktop machine has access to the Active Directory domain controller,  run the following command :
+`$ dig -t SRV _ldap._tcp.htu.local | grep -A2 "ANSWER SECTION"
+`
+```
+;; ANSWER SECTION:
+_ldap._tcp.htu.local. 900 IN SRV 0 100 389 dc1.htu.local.
+```
+<a name="step4"></a>
+## Step 4: Ping Active Directory domain Domain Controllers:
+```
+$ ping test.lab
+$ ping pdc.test.lab
+```
+also
+```
+$ fping pdc.test.lab
+pdc.test.lab is alive
+```
+<a name="step5"></a>
+## Step 5: Install all necessary packages:
+`$ sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
+`
+<img src="https://i.imgur.com/jDHPVft.png">
+<a name="step6"></a>
+## Step 6:
+<a name="step7"></a>
+## Step 7:
+<a name="step8"></a>
+## Step 8:
 <a name="tongket"></a>
 ## III. Summary:
 
