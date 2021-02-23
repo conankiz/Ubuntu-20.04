@@ -59,6 +59,7 @@ dc1.htu.local is alive
 ```
 <a name="step5"></a>
 ## Step 5: Install all necessary packages:
+
 ```
 $ sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
 ```
@@ -66,6 +67,7 @@ after ask type local domain :TEST.LAB
 then OK
 
 <img src="https://i.imgur.com/jDHPVft.png">
+
 <a name="step6"></a>
 ## Step 6: Config your NTP service to point to your domain nameservers, run the following command 
 
@@ -113,6 +115,7 @@ $ sudo realm --verbose join htu.local \
 --user-principal=ubuntu02/administrator@HTU.LOCAL --unattended
 ```
 <img src="https://i.imgur.com/1u42Byu.png">
+
 <a name="step10"></a>
 ## Step 10:Config sssd
 
