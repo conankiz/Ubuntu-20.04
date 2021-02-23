@@ -165,7 +165,7 @@ $ id domainuser
 
 Watch Video here: 
 
-- How to Joining Ubuntu Desktop 20.04 to an Active Directory Domain Controller (Samba 4)(https://youtu.be/S5M8dUgRuLU)
+- [How to Joining Ubuntu Desktop 20.04 to an Active Directory Domain Controller (Samba 4)](https://youtu.be/S5M8dUgRuLU)
 - [How to Install and configure Samba on Ubuntu 20.04 Part 1:  Public folder](https://youtu.be/2o5zgA8ml38)
 - [How to configure and Install Samba on Ubuntu 20.04 Part2: Private Share](https://youtu.be/6s9ZEp3xS94)
 
