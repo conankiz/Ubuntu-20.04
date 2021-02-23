@@ -147,6 +147,9 @@ session required pam_mkhomedir.so skel=/etc/skel/ umask=0077
 $ id domainuser
 ```
 <img src="https://i.imgur.com/6nfInqy.png">
+<a name="step13"></a>
+## Step 13:  Reboot ubuntu desktop and Login with domain user:
+
 <a name="tongket"></a>
 ## III. Summary:
 
