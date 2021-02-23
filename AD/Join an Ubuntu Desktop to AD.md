@@ -38,8 +38,9 @@ $ sudo reboot
 ```
 <a name="step3"></a>
 ## Step 3: - Check your Ubuntu Desktop machine has access to the Active Directory domain controller,  run the following command :
-`$ dig -t SRV _ldap._tcp.htu.local | grep -A2 "ANSWER SECTION"
-`
+```
+$ dig -t SRV _ldap._tcp.htu.local | grep -A2 "ANSWER SECTION"
+```
 ```
 ;; ANSWER SECTION:
 _ldap._tcp.htu.local. 900 IN SRV 0 100 389 dc1.htu.local.
@@ -57,8 +58,9 @@ pdc.test.lab is alive
 ```
 <a name="step5"></a>
 ## Step 5: Install all necessary packages:
-`$ sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
-`
+```
+$ sudo apt-get -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
+```
 <img src="https://i.imgur.com/jDHPVft.png">
 <a name="step6"></a>
 ## Step 6:
