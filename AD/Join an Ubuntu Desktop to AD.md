@@ -114,7 +114,8 @@ $ sudo realm --verbose join htu.local \
 ```
 <img src="https://i.imgur.com/1u42Byu.png">
 <a name="step10"></a>
-## Step 10:Config sssd:
+## Step 10:Config sssd
+
 ```
 $ sudo vi /etc/sssd/sssd.conf
 ```
@@ -127,7 +128,8 @@ access_provider = ad
 $ sudo service sssd restart
 ```
 <a name="step11"></a>
-## Step 11:  Config homedir auto-creation for new users:
+## Step 11:  Config homedir auto-creation for new users
+
 ```
 $ sudo vi /etc/pam.d/common-session
 ```
