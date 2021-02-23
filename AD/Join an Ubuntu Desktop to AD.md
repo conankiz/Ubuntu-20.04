@@ -67,7 +67,8 @@ then OK
 
 <img src="https://i.imgur.com/jDHPVft.png">
 <a name="step6"></a>
-## Step 6: Config your NTP service to point to your domain nameservers, run the following command :
+## Step 6: Config your NTP service to point to your domain nameservers, run the following command 
+
 ```
 $ sudo vi /etc/ntp.conf
 ```
