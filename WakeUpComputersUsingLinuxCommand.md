@@ -84,6 +84,7 @@ Settings for eth0:
 ```
  
 wol p|u|m|b|a|g|s|d...
+
           Set Wake-on-LAN options.  Not all  devices  support  this.   The
           argument  to  this  option  is a string of characters specifying
           which options to enable.
