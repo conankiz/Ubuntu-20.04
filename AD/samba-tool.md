@@ -124,12 +124,14 @@ $ sudo samba-tool domain passwordsettings show
 ## Computer manager
 $ sudo samba-tool computer
 Available subcommands:
+```
   create  - Create a new computer.
   delete  - Delete a computer.
   edit    - Modify Computer AD object.
   list    - List all computers.
   move    - Move a computer to an organizational unit/container.
   show    - Display a computer AD object.
+```
 - List all computer:
 ```
 $ sudo samba-tool computer list
@@ -141,9 +143,11 @@ $ sudo samba-tool computer delete UBUNTU01$
 =========
 ldbsearch -H ldap://127.0.0.1 -s base -b "" defaultNamingContext
 
-==== EDIT A USER DOMAIN =====
+## EDIT A USER DOMAIN
 1. run command
+```
 samba-tool user edit username
+```
 2. press i to insert 
 scriptPath: liendtx.bat
 
