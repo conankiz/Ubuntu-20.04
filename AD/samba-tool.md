@@ -1,9 +1,8 @@
 
-# Samba-tool ==
-# ================
+# Samba-tool
 
-## User Management ==
----------------------
+## User Management
+
 ```
 $ samba user -h
 ```
@@ -48,8 +47,7 @@ $ sudo samba-tool user setpassword your_domain_user
 $ sudo samba-tool user disable your_domain_user
 $ sudo samba-tool user enable your_domain_user
 ```
-## == Group Management ==
-----------------------
+##  Group Management 
 
 - List all samba group:
 ```
@@ -86,8 +84,8 @@ $ sudo samba-tool domain passwordsettings set --history-length=0
 $ sudo samba-tool domain passwordsettings set --min-pwd-age=0
 $ sudo samba-tool domain passwordsettings set --max-pwd-age=0
 ```
-## == Organizational Units (OU) management ==
-## ------------------------------------------
+## Organizational Units (OU) management
+
 ```
 $ samba-tool ou -h
 ```
@@ -154,9 +152,8 @@ samba-tool user setpassword test --newpassword=abc@123 --must-change-at-next-log
 
 2. set pass
 samba-tool user setpassword TestUser1 --newpassword=passw0rd
-## ==============
+
 ## ==== GPO =====
-## ==============
 - 1. sysvol reset
 samba-tool ntacl sysvolreset
 
@@ -171,9 +168,7 @@ samba-tool gpo show {378788FB-807A-4C77-98DB-6E18BAFBE875}
 samba-tool gpo listcontainers 378788FB-807A-4C77-98DB-6E18BAFBE87
 
 
-## ================
 ## == LDBSEARCH ===
-## ================
 
 - 1. list all Computer:
 $ ldbsearch -a -H /usr/local/samba/private/sam.ldb 'dNSHostName=*' | grep dNSHostName
