@@ -153,38 +153,45 @@ scriptPath: liendtx.bat
 
 3. :w
 
-=================
-1. change pass at next login
+
+- 1. change pass at next login
+```
 samba-tool user setpassword test --newpassword=abc@123 --must-change-at-next-login
-
-2. set pass
+```
+- 2. set pass
+```
 samba-tool user setpassword TestUser1 --newpassword=passw0rd
-
-## ==== GPO =====
+```
+##  GPO 
 - 1. sysvol reset
+```
 samba-tool ntacl sysvolreset
-
+```
 - 2. list all GPO:
+ ```
  $ samba-tool gpo listall
 sysvol reset
-
+```
 - 3. show gpo
+```
 samba-tool gpo show {378788FB-807A-4C77-98DB-6E18BAFBE875}
-
+```
 - 4. gpo listcontainers
+```
 samba-tool gpo listcontainers 378788FB-807A-4C77-98DB-6E18BAFBE87
+```
 
-
-## == LDBSEARCH ===
+## LDBSEARCH
 
 - 1. list all Computer:
+```
 $ ldbsearch -a -H /usr/local/samba/private/sam.ldb 'dNSHostName=*' | grep dNSHostName
+```
 
 
-############
-#### EX ####
-
+#### EX 
+```
 homeDrive: O:
 homeDirectory: \\192.168.11.250\users\myttt
 scriptPath: myttt.bat
-
+```
