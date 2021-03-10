@@ -7,7 +7,7 @@
 $ samba user -h
 ```
 - Available subcommands:
-
+```
  add            - Create a new user
 create         - Create a new user
   delete         - Delete a user
@@ -23,6 +23,7 @@ create         - Create a new user
   setpassword    - Set or reset the password of a user account.
   show           - Display a user AD object.
   syncpasswords  - Sync the password of user accounts.
+```
 
 - List all samba AD domain user:
 ```
