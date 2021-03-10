@@ -90,15 +90,15 @@ $ sudo samba-tool domain passwordsettings set --max-pwd-age=0
 
 ```
 $ samba-tool ou -h
+
 ```
----
   create       - Create an organizational unit.
   delete       - Delete an organizational unit.
   list         - List all organizational units.
   listobjects  - List all objects in an organizational unit.
   move         - Move an organizational unit.
   rename       - Rename an organizational unit.
----
+```
 Examples:
 ```
 $ sudo samba-tool ou create 'ou=HTUGROUPS,dc=htu,dc=local'
