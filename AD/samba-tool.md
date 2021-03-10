@@ -7,10 +7,10 @@
 $ samba user -h
 ```
 Available subcommands:
-  add            - Create a new user.
-  create         - Create a new user.
-  delete         - Delete a user.
-  disable        - Disable a user.
+  add            - Create a new user
+  create         - Create a new user
+  delete         - Delete a user
+  disable        - Disable a user
   edit           - Modify User AD object.
   enable         - Enable a user.
   getpassword    - Get the password fields of a user/computer account.
