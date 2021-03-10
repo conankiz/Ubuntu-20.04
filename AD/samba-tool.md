@@ -122,7 +122,9 @@ $ sudo samba-tool domain passwordsettings set --min-pwd-length=4
 $ sudo samba-tool domain passwordsettings show
 ```
 ## Computer manager
+```
 $ sudo samba-tool computer
+```
 Available subcommands:
 ```
   create  - Create a new computer.
