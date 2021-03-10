@@ -92,6 +92,7 @@ $ sudo samba-tool domain passwordsettings set --max-pwd-age=0
 $ samba-tool ou -h
 
 ```
+```
   create       - Create an organizational unit.
   delete       - Delete an organizational unit.
   list         - List all organizational units.
