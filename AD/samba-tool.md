@@ -7,7 +7,6 @@
 $ samba user -h
 ```
 Available subcommands:
-
   add            - Create a new user.
   create         - Create a new user.
   delete         - Delete a user.
