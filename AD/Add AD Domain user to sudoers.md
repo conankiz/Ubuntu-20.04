@@ -3,11 +3,15 @@
 
 - On local admin user:
 - First check aduser using command id
+```
 $ id <AD user>( #id domain\\aduser01 )
+```
 
 - Edit /etc/sudoers: with the following entries
-$ sudo nano /etc/sudoer
 
+```
+$ sudo nano /etc/sudoer
+```
 - Add The group domain admins allow run sudo translate to the following line in /etc/sudoer
 %domain\ admins ALL=(ALL:ALL) ALL
 
