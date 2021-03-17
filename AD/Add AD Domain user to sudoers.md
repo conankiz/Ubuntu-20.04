@@ -23,3 +23,6 @@ $ sudo nano /etc/sudoer
 ```
 %domain\ users ALL=(ALL:ALL) ALL
 ```
+
+## IF error:
+$ pkexec visudo
