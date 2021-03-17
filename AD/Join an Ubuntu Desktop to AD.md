@@ -32,7 +32,15 @@
 ```
 $ sudo vi /etc/hostname
 ```
+192.168.30.241 dc1.htu.local dc1
 <img src="https://i.imgur.com/ht8PsTt.png">
+
+```
+$ sudo vi /etc/resolv.conf
+```
+nameserver 192.168.30.241
+options edns0
+search htu.local
 
 <a name="step2"></a>
 ## Step 2: Update system and install fping
