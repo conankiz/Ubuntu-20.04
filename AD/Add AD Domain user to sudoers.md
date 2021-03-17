@@ -12,7 +12,14 @@ $ id <AD user>( #id domain\\aduser01 )
 ```
 $ sudo nano /etc/sudoer
 ```
+
 - Add The group domain admins allow run sudo translate to the following line in /etc/sudoer
+```
 %domain\ admins ALL=(ALL:ALL) ALL
+```
 
 - Add The group domain users allow run sudo:
+
+```
+%domain\ users ALL=(ALL:ALL) ALL
+```
