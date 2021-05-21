@@ -26,9 +26,9 @@ For this tutorial, we’re going to be using a 192.168.255.0/24 network.
 The Windows machine will have IP address 192.168.1.2 and the Linux machine 192.168.1.3
 Both machine will also be in the same local workgroup. You can name the workgroup whatever you want, but for this post, our workgroup will be the default Windows workgroup called WORKGROUP.
 
-Windows IP address =========================> 192.168.255.135
-Ubuntu IP address ==========================> 192.168.255.201
-Workgroup Name ===========================> WORKGROUP
+Windows IP address ========================= 192.168.255.135
+Ubuntu IP address ========================== 192.168.255.201
+Workgroup Name ============================= WORKGROUP
 
 Both the Windows and Ubuntu machines will be member of the local domain or workgroup called WORKGROUP.
 <a name="batdau"></a>
